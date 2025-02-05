@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Boxicons for icons -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="../components/navbar.css" rel="stylesheet">
+  <link href="../components/footer.css" rel="stylesheet">
+
+  <style>
+
+      body {
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(45deg, #3c094f, #0a0a10);
+          margin: 0;
+          color: #ffffff;
+      }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #12d640;
+            margin: 8px auto;
+            border-radius: 3px;
+            animation: slideIn 1s ease-in-out;
+        }
+     .skills {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.skill-category {
+    background: rgba(30, 30, 46, 0.9);
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(214, 129, 18, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(18, 214, 64, 0.8);
+}
+
+.skill-category h3 {
+    font-size: 22px;
+    color: #12d640;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-category h3 i {
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-card {
+    background: rgba(40, 40, 50, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(214, 129, 18, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(18, 214, 64, 0.8);
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+.skill-card span {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-category {
+        width: 90%;
+    }
+
+    .skill-card {
+        width: 80px;
+    }
+
+    .skill-card img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.certificates {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificate-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.certificate-card {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(214, 129, 18, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(18, 214, 64, 0.8);
+}
+
+.certificate-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.certificate-card:hover .certificate-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .certificate-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificate-card {
+        width: 90%;
+        height: auto;
+    }
+}
+
+
+/* Floating Icons Animation */
+.floating-icons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .floating-icons i {
+      position: absolute;
+      font-size: 48px;
+      opacity: 0.5;
+      animation: float 8s infinite ease-in-out;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-50px) rotate(180deg);
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+
+    .floating-icons i:nth-child(1) { top: 10%; left: 10%; animation-duration: 12s; }
+    .floating-icons i:nth-child(2) { top: 20%; left: 70%; animation-duration: 15s; }
+    .floating-icons i:nth-child(3) { top: 40%; left: 40%; animation-duration: 10s; }
+    .floating-icons i:nth-child(4) { top: 60%; left: 15%; animation-duration: 18s; }
+    .floating-icons i:nth-child(5) { top: 70%; left: 80%; animation-duration: 20s; }
+    .floating-icons i:nth-child(6) { top: 5%; left: 85%; animation-duration: 16s; }
+    .floating-icons i:nth-child(7) { top: 50%; left: 5%; animation-duration: 22s; }
+    .floating-icons i:nth-child(8) { top: 90%; left: 50%; animation-duration: 14s; }
+    
+
+    #navbar {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+  </style>
+</head>
+<body>
+
+   <!-- Navbar -->
+   <div id="navbar"></div>
+   <script>
+       fetch("../components/navbar.html")
+           .then((response) => {
+               if (!response.ok) throw new Error("Failed to load navbar");
+               return response.text();
+           })
+           .then((data) => {
+               document.getElementById("navbar").innerHTML = data;
+           })
+           .catch((error) => console.error(error));
+   </script>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <i class="bx bxl-html5"></i>
+      <i class="bx bxl-css3"></i>
+      <i class="bx bxl-javascript"></i>
+      <i class="bx bxl-python"></i>
+      <i class="bx bx-code-alt"></i>
+      <i class="bx bxl-react"></i>
+      <i class="bx bxl-bootstrap"></i>
+      <i class="bx bxl-github"></i>
+  </div>
+  <section class="skills">
+    <div class="section-title">
+        <h2>Skills</h2>
+    </div>
+
+    <div class="skills-container">
+        <!-- Web Development Skills -->
+        <div class="skill-category">
+            <h3><i class='bx bx-code-alt'></i> Web Development</h3>
+            <div class="skill-list">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
+                    <span>Express.js</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="skill-category">
+            <h3><i class='bx bx-code'></i> Programming Languages</h3>
+            <div class="skill-list">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                    <span>C</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+                    <span>R</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Machine Learning Skills -->
+        <div class="skill-category">
+            <h3><i class='bx bx-brain'></i> Machine Learning</h3>
+            <div class="skill-list">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                    <span>TensorFlow</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                    <span>PyTorch</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                    <span>NumPy</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                    <span>Pandas</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg" alt="Kaggle">
+                    <span>Kaggle</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platforms & Tools -->
+        <div class="skill-category">
+            <h3><i class='bx bx-server'></i> Platforms & Tools</h3>
+            <div class="skill-list">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    <span>Git</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                    <span>Docker</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                    <span>Linux</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+                    <span>SQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="certificates">
+    <div class="section-title">
+        <h2>Certificates</h2>
+    </div>
+
+    <div class="certificate-container">
+        <!-- Certificate 1 -->
+        <div class="certificate-card">
+            <img src="../assets/certificates/Deep Learning - IIT Ropar_page-0001.jpg" alt="Deep Learning Certificate">
+            <div class="certificate-info">
+                <h3>Deep Learning – IIT Ropar (SWAYAM-NPTEL)</h3>
+                <p>Ranked in the <strong>Top 2%</strong> among 23,572 participants. Covered advanced topics like CNNs, RNNs, Attention Mechanisms, and Optimization Algorithms.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="certificate-card">
+            <img src="../assets/certificates/Data Base Management System_page-0001.jpg" alt="Database Management Certificate">
+            <div class="certificate-info">
+                <h3>Database Management System – IIT Kharagpur (SWAYAM-NPTEL)</h3>
+                <p>Studied RDBMS, SQL, Query Optimization, Transaction Management, and Concurrency Control.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="certificate-card">
+            <img src="../assets/certificates/Pratik Yuvraj Chougule - Pandas.png" alt="Pandas Certificate">
+            <div class="certificate-info">
+                <h3>Pandas - Kaggle Learning</h3>
+                <p>Completed the Pandas course on Kaggle, focusing on data manipulation, analysis, and visualization using Python.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="certificate-card">
+            <img src="../assets/certificates/Pratik Chougule-29 Infosys Springboard_page-0001.jpg" alt="R Programming Certificate">
+            <div class="certificate-info">
+                <h3>Fundamentals of R Programming – Infosys Springboard</h3>
+                <p>Learned the basics of R programming, including data structures, statistical analysis, and data visualization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<div id="footer"></div>
+<script>
+    fetch("../components/footer.html")
+        .then((response) => {
+            if (!response.ok) throw new Error("Failed to load footer");
+            return response.text();
+        })
+        .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error(error));
+</script>
+<!-- Bootstrap JS (with Popper.js for dropdowns, navbar toggles, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

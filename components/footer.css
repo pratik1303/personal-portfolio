@@ -1,0 +1,46 @@
+/* Footer Styling */
+.footer {
+    background: #1515159e;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    color: #12d640; /* Highlight effect */
+}
+
+/* Social Media Icons */
+.footer .social-icons a {
+    font-size: 22px;
+    margin: 0 10px;
+    color: #ffffff;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.2);
+    color: #12d640;
+}
+
+/* Footer Links */
+.footer .footer-links {
+    margin: 15px 0;
+}
+
+.footer .footer-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+

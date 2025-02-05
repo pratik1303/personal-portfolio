@@ -1,0 +1,102 @@
+/* Navbar Styling */
+.navbar {
+    display: flex; /* Add this to make the navbar a flex container */
+    justify-content: space-between; /* Space between brand and nav items */
+    align-items: center; /* Center items vertically */
+    background: transparent; /* Matching gradient */
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* Branding */
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none; /* Ensure no text decoration on the brand */
+}
+
+/* Navbar Links */
+.navbar-nav {
+    margin-top: 10px;
+}
+
+.navbar-nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-nav li + li {
+    margin-left: 30px;
+}
+
+.nav-link {
+    display: block;
+    position: relative;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px 0; /* Adding some padding for better spacing */
+}
+
+/* Hover Effects for Navbar Links */
+.nav-link:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #0bf150; /* Gold highlight */
+    visibility: hidden;
+    width: 0;
+    transition: all 0.3s ease-in-out;
+}
+.nav-link li a:hover {
+    color: #12d640;
+  }
+.nav-link:hover:before,
+.nav-item:hover > .nav-link:before,
+.nav-item.active > .nav-link:before {
+    
+    visibility: visible;
+    width: 100% /* Length of the underline */
+}
+
+.nav-link:hover,
+.nav-item:hover > .nav-link,
+.nav-item.active > .nav-link {
+    color: #12d640; /* Bright green hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+    text-decoration: none;
+}
+
+/* Mobile Navbar Toggle Button */
+.navbar-toggler {
+    color: #ffffff;
+    font-size: 24px;
+    border: none;
+}
+
+/* Responsive Collapse */
+.navbar-collapse {
+    justify-content: flex-end; /* Corrected to flex-end for better alignment */
+}
+
+@media (max-width: 767px) {
+    /* Ensure that on mobile, the navbar items collapse properly */
+    .navbar-nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .navbar-nav li + li {
+        margin-left: 0; /* Remove left margin for mobile */
+        margin-top: 10px; /* Add top margin for vertical spacing */
+    }
+}

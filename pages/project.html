@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Section</title>
+     <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Remix Icons -->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+   <!-- Boxicons for icons -->
+   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+   
+   <!-- Remix Icons -->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+   
+   <link href="../components/navbar.css" rel="stylesheet">
+   <link href="../components/footer.css" rel="stylesheet">
+    <style>
+         body {
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(45deg, #3c094f, #0a0a10);
+          margin: 0;
+          color: #ffffff;
+      }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #12d640;
+            margin: 8px auto;
+            border-radius: 3px;
+        }
+        .portfolio-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+       
+
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Spacing between cards */
+        }
+
+        .portfolio-card {
+        display: flex;
+        background-color: rgba(30, 30, 46, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(214, 129, 18, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(18, 214, 64, 0.8); /* Green glow */
+    }
+        
+
+        .portfolio-card img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .portfolio-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(18, 214, 64, 0.7); 
+            }
+
+        .portfolio-content {
+            flex: 4;
+            padding-left: 20px;
+        }
+        .portfolio-title{
+            color: #12d640;
+        }
+
+        .portfolio-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #e0d8d8;
+        }
+
+        .portfolio-btn {
+            padding: 5px 10px;
+            color: white;
+            border-radius: 30px;
+            border: 2px solid;
+            background-color: transparent;
+            cursor: pointer;
+            font-weight: bold;
+            font-size:13px;
+        }
+
+        .portfolio-btn:hover {
+            background-color: #084298;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portfolio-card {
+                flex: 1 1 100%; /* Full width on smaller screens */
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center content */
+                text-align: center;
+            }
+
+            .portfolio-card img {
+                max-width: 300px; /* Smaller image size for mobile */
+            }
+
+            .portfolio-content {
+                padding-left: 10px;
+            }
+            
+        }
+
+        /* Floating Icons Animation */
+.floating-icons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .floating-icons i {
+      position: absolute;
+      font-size: 48px;
+      opacity: 0.5;
+      animation: float 8s infinite ease-in-out;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-50px) rotate(180deg);
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+
+    .floating-icons i:nth-child(1) { top: 10%; left: 10%; animation-duration: 12s; }
+    .floating-icons i:nth-child(2) { top: 20%; left: 70%; animation-duration: 15s; }
+    .floating-icons i:nth-child(3) { top: 40%; left: 40%; animation-duration: 10s; }
+    .floating-icons i:nth-child(4) { top: 60%; left: 15%; animation-duration: 18s; }
+    .floating-icons i:nth-child(5) { top: 70%; left: 80%; animation-duration: 20s; }
+    .floating-icons i:nth-child(6) { top: 5%; left: 85%; animation-duration: 16s; }
+    .floating-icons i:nth-child(7) { top: 50%; left: 5%; animation-duration: 22s; }
+    .floating-icons i:nth-child(8) { top: 90%; left: 50%; animation-duration: 14s; }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <i class="bx bxl-html5"></i>
+        <i class="bx bxl-css3"></i>
+        <i class="bx bxl-javascript"></i>
+        <i class="bx bxl-python"></i>
+        <i class="bx bx-code-alt"></i>
+        <i class="bx bxl-react"></i>
+        <i class="bx bxl-bootstrap"></i>
+        <i class="bx bxl-github"></i>
+    </div>
+        <!-- Navbar -->
+        <div id="navbar"></div>
+        <script>
+            fetch("../components/navbar.html")
+                .then((response) => {
+                    if (!response.ok) throw new Error("Failed to load navbar");
+                    return response.text();
+                })
+                .then((data) => {
+                    document.getElementById("navbar").innerHTML = data;
+                })
+                .catch((error) => console.error(error));
+        </script>
+        <section class="portfolio-section">
+        
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card">
+                    <img src="../assets/projects/virtuhire.png" alt="VirtuHire">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">VirtuHire: VR and AI-Based Virtual Interview System</h3>
+                        <p class="portfolio-description">
+                            Created an immersive VR platform using Unity and OpenAI to simulate realistic job interviews. Integrated AI for question generation and speech analysis to evaluate candidate performance. Provided detailed feedback reports using ML-based analytics. Recognized as <strong>Best Academic Project (Semester V)</strong>, this project highlights skills in VR development, AI integration, and machine learning.
+                        </p>
+                        <button class="portfolio-btn">View Project</button>
+                    </div>
+                </div>
+    
+                <!-- Card 4 -->
+                <div class="portfolio-card">
+                    <img src="../assets/projects/dibeties prediction.png" alt="Diabetes Prediction App">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Diabetes Prediction Web Application</h3>
+                        <p class="portfolio-description">
+                            A Machine Learning-powered web app that predicts the likelihood of diabetes based on user input. Built with <strong>Flask, MongoDB, and Heroku</strong>, the app offers a user-friendly interface and real-time predictions. Features include data validation, feedback collection, and deployment on Heroku for fast and reliable access. The app uses a <strong>Random Forest Classifier</strong> trained on the PIMA Indians Diabetes Dataset.
+                        </p>
+                        <button class="portfolio-btn">View Project</button>
+                    </div>
+                </div>
+                <!-- Card 1 -->
+                <div class="portfolio-card">
+                    <img src="../assets\projects\rps.jpg" alt="Rock-Paper-Scissors Game">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Rock-Paper-Scissors Game</h3>
+                        <p class="portfolio-description">
+                            A modern and interactive implementation of the classic Rock-Paper-Scissors game. Features include <strong>persistent score tracking</strong>, a sleek dark-themed design, smooth animations, and a responsive interface for both desktop and mobile. The game also includes a <strong>Game Over Modal</strong> to display final results in a stylish fullscreen view.
+                        </p>
+                        <button class="portfolio-btn">View Project</button>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="portfolio-card">
+                    <img src="../assets\projects\notedetection.jpg" alt="Real-Time Note Detection Tool">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Real-Time Note Detection Tool in Music</h3>
+                        <p class="portfolio-description">
+                            Developed a high-precision tool to detect musical notes in real-time using Python, TensorFlow, and Librosa. The system analyzes audio signals and predicts note sequences with <strong>95.67% accuracy</strong>. Built with convolutional neural networks (CNNs) for advanced pattern recognition, this project showcases expertise in AI/ML and audio signal processing.
+                        </p>
+                        <button class="portfolio-btn">View Project</button>
+                    </div>
+                </div>
+                
+                
+
+
+                <!-- Card 5 -->
+                <div class="portfolio-card">
+                    <img src="../assets/projects/portfolio.png" alt="Portfolio Project">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Personal Portfolio Website</h3>
+                        <p class="portfolio-description">
+                            A fully responsive and visually appealing portfolio website built using <strong>Bootstrap, HTML, CSS, and JavaScript</strong>. The website showcases my projects, skills, and achievements in a clean and professional layout. It features smooth animations, a modern design, and seamless navigation for an enhanced user experience.
+                        </p>
+                        <button class="portfolio-btn">View Project</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-- Footer -->
+<div id="footer"></div>
+<script>
+    fetch("../components/footer.html")
+        .then((response) => {
+            if (!response.ok) throw new Error("Failed to load footer");
+            return response.text();
+        })
+        .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error(error));
+</script>
+<!-- Bootstrap JS (with Popper.js for dropdowns, navbar toggles, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
